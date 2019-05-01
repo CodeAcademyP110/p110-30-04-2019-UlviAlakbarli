@@ -5,6 +5,7 @@ $(document).ready(function () {
     $(".support-button").click(function(){
         $(this).addClass("d-none");
         $(".support-message").removeClass("d-none");
+        $("input").focus();
         
     })
     $(".far.fa-caret-square-down").click(function(){
@@ -44,14 +45,33 @@ $(document).ready(function () {
             spmes.scrollTo(0,spmes.scrollHeight);
             $("input").val("");
 
-    
-    
-           
         }
 
-        $(document).on("dblclick","li",function(){
+    }
+    //WAy1
+    // $(document).on("click","li",function(){
+    //         $(this).toggleClass("dalete");
+    //         if($("li").hasClass("dalete")){
+    //             $(".bg-danger").removeClass("d-none");
+    //             $(document).on("click",".bg-danger",function(){
+    //                 $(".dalete").each((index,value)=>{
+    //                       $(value).remove();
+    //                     $(".bg-danger").addClass("d-none");
+    //                 })
+                   
+    //             })
+
+    //         }
+    //         else{
+    //             $(".bg-danger").addClass("d-none");
+    //         }
+            
+    //     })
+
+    //WAY2
+         $(document).on("click","li",function(){
             $(this).toggleClass("dalete");
-            if(document.querySelector(".dalete")){
+            if($(".dalete")){
                 $(".bg-danger").removeClass("d-none");
                 $(".bg-danger").click(function(){
                     $(".dalete").remove();
@@ -64,12 +84,6 @@ $(document).ready(function () {
             }
             
         })
-    }
-    
-    
-       
-    
-    
 });
 
 
